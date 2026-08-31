@@ -1,0 +1,61 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "3D Baski Maliyet",
+  "version": "2.3.1",
+  "identifier": "com.axthrowa.baskimaliyet",
+  "build": {
+    "beforeDevCommand": "npm run dev:web",
+    "devUrl": "http://localhost:5173",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "3D Baskı Maliyet Hesaplayıcı",
+        "width": 1440,
+        "height": 940,
+        "minWidth": 1024,
+        "minHeight": 680,
+        "resizable": true,
+        "center": true,
+        "theme": "Dark",
+        "label": "ana",
+        "decorations": true,
+        "visible": true,
+        "focus": true,
+        "fullscreen": false,
+        "maximized": false,
+        "skipTaskbar": false,
+        "dragDropEnabled": false
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self'; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self' ipc: http://ipc.localhost; worker-src 'self' blob:"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": [
+      "nsis"
+    ],
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.ico"
+    ],
+    "windows": {
+      "nsis": {
+        "installMode": "currentUser",
+        "languages": [
+          "turkish",
+          "english"
+        ]
+      }
+    },
+    "copyright": "© 2026",
+    "shortDescription": "3D baski maliyeti ve siparis yonetimi",
+    "longDescription": "Filament, elektrik, amortisman ve atik maliyetini hesaplar; hazir urun katalogu ve siparis yonetimi sunar."
+  }
+}
